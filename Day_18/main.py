@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen 
+from turtle import Turtle, Screen, tiltangle 
 import random
 import turtle
 
@@ -14,20 +14,16 @@ def get_color():
     b = random.randint(0,255)
     return (r,g,b) 
 
+tilt_angle = 5
+for i in range(round(360/tilt_angle)):
+    timmy.speed(0)
+    timmy.pen(pencolor=get_color())
+    timmy.circle(100)
+    timmy.left(tilt_angle)
+    
 
-dirs = [0,90,180,270]
-
-def movement(dir):
-    timmy.speed("fastest")
-    timmy.pensize(5)
-    timmy.color(get_color())
-    timmy.forward(30)
-    timmy.setheading(dir)
 
 screen = Screen()
-for _ in range(100):
-    direction = random.choice(dirs)
-    movement(direction)
 
 screen.exitonclick()
 
